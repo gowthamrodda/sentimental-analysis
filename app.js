@@ -1,10 +1,11 @@
+import {http} from 'http';
+
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const debug = require('debug')('sentimentsl-analysis:server');
-const http = require('http');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
