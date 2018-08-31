@@ -1,0 +1,22 @@
+{
+  "mongodb": {
+    "db": "hello",
+    "options": "",
+    "url": "mongodb://localhost:27017",
+    "username": "",
+    "password": "",
+    "replicaSet": "",
+    "collections": {
+      "twitter": {
+        "name": "twitter",
+        "options": null
+      },
+      "user": {
+        "name": "user",
+        "options": null
+      }
+    }
+  },
+  "twitter": {
+  }
+}
