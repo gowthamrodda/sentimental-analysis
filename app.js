@@ -16,6 +16,18 @@ const usersRouter = require('./routes/users');
 class Server {
 
   constructor(app, http) {
+    console.log('Connecting to Mongo DB ...'.green);
+    Mongo
+      .connect()
+      .then(() => {
+        this.start(app, http);
+      })
+      .catch(err => {
+        throw err;
+      });
+  }
+
+  start(app, http) {
     this.app = app;
 
     // view engine setup
@@ -56,7 +68,6 @@ class Server {
     this.server.listen(this.port);
     this.server.on('error', this.onError);
     this.server.on('listening', this.onListening.bind(this));
-
   }
 
   onError(error) {
@@ -89,7 +100,8 @@ class Server {
       ? 'pipe ' + addr
       : 'port ' + addr.port;
     debug('Listening on ' + bind);
-    console.log('-------------> server listening on', bind);
+    console.log('Server listening on', bind);
+    console.log('Bought to you by Gowtham Kumar Rodda'.red);
   }
 
   normalizePort(val) {
